@@ -1,0 +1,19 @@
+1. I work for a major corportion and ultimatley this react app will be deployed onto AWS
+2. Today we are scaffolding using Vite, Typescript, Tailwind, and ShadCN. 
+2.5 WE are building medea-react this is an LLM chatbot application built on top of AWS bedrock. 
+3. We want it to look like a professional beautofil chat application like claude or chatgpt. the standards of quality are incredibly high.
+
+3. We will mock all backend calls with a preset response but leave the structure for how they will act
+4. This will be deployed as S3 with Cloudfront 
+5. Auth will be done using only AWS Cognito 
+6. API's will be Lambda functions
+
+7,. the speicifc features we are building today are mocks for user authentation and setup. then the basic chat interface. 
+8. lets use drizzle with a local  mysql database this way the move to AWS is easy. 
+9. THINK on best ways to set this up. we will be using lambdas for almost everything so its important to create seperation between server and client properly. 
+7. lets use react built ins context API for state management. 
+
+
+8. you should alwyas think deeply about the problem and think abouyt the unique business reuqirements of what we are building
+9. ALWAYS use shadcn components and tailwind for styling. 
+
