@@ -9,26 +9,21 @@ import {
 } from "@/components/ui/card"
 import { FC, useRef } from "react"
 
-export const SETUP_STEP_COUNT = 3
 
 interface StepContainerProps {
   stepDescription: string
-  stepNum: number
   stepTitle: string
-  onShouldProceed: (shouldProceed: boolean) => void
+  onShouldProceed: () => void
   children?: React.ReactNode
   showBackButton?: boolean
-  showNextButton?: boolean
 }
 
 export const StepContainer: FC<StepContainerProps> = ({
   stepDescription,
-  stepNum,
   stepTitle,
   onShouldProceed,
   children,
   showBackButton = false,
-  showNextButton = true
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -49,9 +44,7 @@ export const StepContainer: FC<StepContainerProps> = ({
         <CardTitle className="flex justify-between">
           <div>{stepTitle}</div>
 
-          <div className="text-sm">
-            {stepNum} / {SETUP_STEP_COUNT}
-          </div>
+
         </CardTitle>
 
         <CardDescription>{stepDescription}</CardDescription>
@@ -65,7 +58,7 @@ export const StepContainer: FC<StepContainerProps> = ({
             <Button
               size="sm"
               variant="outline"
-              onClick={() => onShouldProceed(false)}
+              onClick={() => onShouldProceed()}
             >
               Back
             </Button>
@@ -73,15 +66,13 @@ export const StepContainer: FC<StepContainerProps> = ({
         </div>
 
         <div>
-          {showNextButton && (
             <Button
               ref={buttonRef}
               size="sm"
-              onClick={() => onShouldProceed(true)}
+              onClick={onShouldProceed}
             >
               Next
             </Button>
-          )}
         </div>
       </CardFooter>
     </Card>

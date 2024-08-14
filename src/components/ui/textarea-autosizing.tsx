@@ -17,6 +17,8 @@ interface TextareaAutosizeProps {
   onPaste?: (event: React.ClipboardEvent) => void
   onCompositionStart?: (event: React.CompositionEvent) => void
   onCompositionEnd?: (event: React.CompositionEvent) => void
+  isSending?: boolean
+  
 }
 
 export const TextareaAutosize: FC<TextareaAutosizeProps> = ({
